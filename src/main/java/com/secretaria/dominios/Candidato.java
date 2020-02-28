@@ -2,9 +2,18 @@ package com.secretaria.dominios;
 
 public class Candidato {
 
+    private int id;
     private String nome;
     private String cpf;
     private String dataNascimento;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = (int) (1 + (Math.random() * 100));;
+    }
 
     public String getNome() {
         return nome;
@@ -29,14 +38,4 @@ public class Candidato {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
-    @Override
-    public String toString() {
-        return "Candidato{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                '}';
-    }
-
 }

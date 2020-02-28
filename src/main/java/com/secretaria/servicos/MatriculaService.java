@@ -5,6 +5,8 @@ import com.secretaria.dominios.PreMatricula;
 import com.secretaria.repositorios.CandidatoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MatriculaService {
 
@@ -23,4 +25,19 @@ public class MatriculaService {
         preMatriculaRepository.save(preMatricula);
     }
 
+    public PreMatriculaRepository getPreMatriculaRepository() {
+        return preMatriculaRepository;
+    }
+
+    public void setPreMatriculaRepository(PreMatriculaRepository preMatriculaRepository) {
+        this.preMatriculaRepository = preMatriculaRepository;
+    }
+
+    public PreMatricula addMatricula(int id) {
+        return preMatriculaRepository.retornaMatricula(id);
+    }
+
+    public List<PreMatricula> retornaMatriculas() {
+        return preMatriculaRepository.getPreMatriculas();
+    }
 }

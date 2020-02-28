@@ -16,4 +16,22 @@ public class PreMatriculaRepository {
         return preMatricula;
     }
 
+    public PreMatricula retornaMatricula(int id) {
+        for(PreMatricula preMatri : preMatriculas) {
+            if (preMatri.getCandidato().getId().equals(id))
+            {
+                preMatri.setAvaliado(Boolean.TRUE);
+                return preMatri;
+            }
+        }
+        return null;
+    }
+
+    public List<PreMatricula> getPreMatriculas() {
+        return preMatriculas;
+    }
+
+    public void setPreMatriculas(List<PreMatricula> preMatriculas) {
+        this.preMatriculas = preMatriculas;
+    }
 }
